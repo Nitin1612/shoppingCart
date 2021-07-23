@@ -1,18 +1,19 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
 
 declare var paypal;
 
 @Component({
-  selector: 'app-payme',
-  templateUrl: './payme.component.html',
-  styleUrls: ['./payme.component.css']
+  selector: "app-payme",
+  templateUrl: "./payme.component.html",
+  styleUrls: ["./payme.component.css"]
 })
 export class PaymeComponent implements OnInit {
-  @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
+  @ViewChild("paypal", { static: true }) paypalElement: ElementRef;
 
   product = {
-    price :0,
-    description: 'After the completion of payment Enjoy your ride with your Road Companion'
+    price: 1,
+    description:
+      "After the completion of payment Enjoy your ride with your Road Companion"
   };
 
   paidFor = false;
@@ -26,7 +27,7 @@ export class PaymeComponent implements OnInit {
               {
                 description: this.product.description,
                 amount: {
-                  currency_code: 'INR',
+                  currency_code: "USD",
                   value: this.product.price
                 }
               }
@@ -38,7 +39,7 @@ export class PaymeComponent implements OnInit {
           this.paidFor = true;
           console.log(order);
         },
-        onError: err => {
+        onError: (err) => {
           console.log(err);
         }
       })
