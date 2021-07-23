@@ -1,0 +1,17 @@
+<div *ngIf="!paidFor">
+  <h1>Proceed to checkout Using payU SandBox</h1>
+
+  <p>{{ product.description }}</p>
+
+  <img
+    src="https://lh3.googleusercontent.com/proxy/1bKQVEaNqxvXNkqmUaS0_QQbU39k8MO1p5TcZ13YGnBgc5IeWfpOaVTfcQIJXhO1LHtyXBuZV3uWy7Va-FIhgAP8wB_ugHyMIorDZHymGbOE8wqX9xJ7SzE8Hk8UkSNS9ntTH-nWBDRTSKCcBawava2YpA"
+  />
+</div>
+
+<div *ngIf="paidFor">
+  <h1>Yay, you have successfully made the payment</h1>
+
+  <img src="https://i.stack.imgur.com/YbIni.png" />
+</div>
+
+<div [hidden]="paidFor" #paypal></div>

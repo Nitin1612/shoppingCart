@@ -1,0 +1,9 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <form><list [products]="bikes" (addToCart)="addToCart($event)"></list>
+  <cart
+    [products]="bikesInCart"
+    (removeFromCart)="removeFromCart($event)"
+  ></cart></form>
+  <app-payme></app-payme>
+</div>
